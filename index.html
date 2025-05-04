@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Portofolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #001f3f; /* Navy */
+            color: #ffffff; 
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+        header, footer {
+            background-color: #001a33; /* Dark Blue */
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            margin: 15px 0;
+        }
+        nav a {
+            color: #00bfff; /* Light Blue */
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #0099cc;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .section {
+            background-color: #003366; /* Slightly lighter dark blue */
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            transform: scale(1.02);
+        }
+        h2 {
+            border-bottom: 2px solid #00bfff;
+            padding-bottom: 10px;
+        }
+        .todo-list {
+            margin-top: 20px;
+        }
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #00bfff;
+        }
+        .todo-item.completed {
+            text-decoration: line-through;
+            color: #aaaaaa;
+        }
+        .todo-input {
+            display: flex;
+            margin-top: 10px;
+        }
+        .todo-input input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        .todo-input button {
+            padding: 10px;
+            background-color: #00bfff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+            transition: background-color 0.3s;
+        }
+        .todo-input button:hover {
+            background-color: #0099cc;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10px;
+        }
+        .gallery-grid img {
+            border-radius: 8px;
+            transition: transform 0.3s;
+            width: 100%;
+            object-fit: cover;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>PORTOFOLIO</h1>
+    <nav>
+        <a href="#about">Tentang Saya</a>
+        <a href="#hobbies">Hobi</a>
+        <a href="#contact">Kontak</a>
+        <a href="#media">Media</a>
+        <a href="#gallery">Galeri</a>
+        <a href="#guestbook">Buku Tamu</a>
+    </nav>
+</header>
+
+<main class="grid-container">
+    <section id="about" class="section">
+        <img src="profile abdi.jpg" alt="Foto Profil Abdi" width="150" style="border-radius: 50%; border: 3px solid #00bfff;">
+        <h2>Tentang Saya</h2>
+        <p>Saya seorang mahasiswa aktif di UISI, memiliki kemampuan leadership yang baik, mudah bergaul, cepat beradaptasi, dan suka belajar hal baru.</p>
+    </section>
+
+    <section id="hobbies" class="section">
+        <h2>Hobi</h2>
+        <ul>
+            <li>Kuliner</li>
+            <li>Traveling</li>
+            <li>Bernyanyi dan bermain alat musik</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Kontak</h2>
+        <p>Email: <a href="mailto:abdi.nurhaqqin23@student.uisi.ac.id" style="color: #00bfff;">abdi.nurhaqqin23@student.uisi.ac.id</a></p>
+        <p>Telepon: 0856-0410-7616</p>
+        <p>Alamat: Tambakboyo Rt.004/Rw.001, Kecamatan Tikung, Kabupaten Lamongan</p>
+    </section>
+
+    <section id="media" class="section">
+        <h2>Media</h2>
+        <h3>Video</h3>
+        <video controls style="width: 100%; max-width: 600px;">
+            <source src="Gelora Asmara.mp4" type="video/mp4"> 
+            Browser Anda tidak mendukung pemutar video.
+        </video>
+        <h3>Lagu</h3>
+        <audio controls>
+            <source src="Pasti bisa.mp3" type="audio/mp3">
+            Browser Anda tidak mendukung pemutar audio.
+        </audio>
+    </section>
+
+    <section id="gallery" class="section">
+        <h2>Galeri Foto</h2>
+        <div class="gallery-grid">
+            <!-- Gambar dari Unsplash akan ditambahkan di sini -->
+        </div>
+    </section>
+
+    <section id="guestbook" class="section">
+        <h2>Buku Tamu</h2>
+        <div class="todo-list" id="todo-list"></div>
+        <!-- Menghapus semua item, sehingga bagian Buku Tamu kosong -->
+        <div class="todo-input">
+            <input type="text" id="todo-input" placeholder="Tulis pesan Anda...">
+            <button onclick="addItem()">Tambah</button>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Portofolio Abdi</p>
+</footer>
+
+<script>
+    const API_KEY = 'JwrrbFm2me_pMxV4OSbHOmjAEqpgma35tmis73LPvuA'; // Ganti dengan API key Anda
+    const UNSPLASH_URL = 'https://api.unsplash.com/photos/random?count=5&client_id=' + API_KEY;
+
+    async function fetchUnsplashImages() {
+        try {
+            const response = await fetch(UNSPLASH_URL);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            displayImages(data);
+        } catch (error) {
+            console.error('Error fetching images:', error);
+            alert('Gagal memuat gambar. Pastikan API key valid dan koneksi internet baik.');
+        }
+    }
+
+    function displayImages(photos) {
+        const gallery = document.querySelector('.gallery-grid');
+        console.log(photos); // Log data untuk memeriksa
+        photos.forEach(photo => {
+            const img = document.createElement('img');
+            img.src = photo.urls.small; // Ukuran gambar
+            img.alt = photo.alt_description;
+            gallery.appendChild(img);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchUnsplashImages();
+        loadItems();
+    });
+
+    async function loadItems() {
+        // Mengosongkan daftar tamu saat halaman dimuat
+        const list = document.getElementById('todo-list');
+        list.innerHTML = ''; // Menghapus semua item yang ada
+    }
+
+    async function fetchTasks() {
+        try {
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+            if (!response.ok) throw new Error('Network response was not ok');
+            return await response.json();
+        } catch (error) {
+            alert('Error fetching tasks: ' + error.message);
+            return [];
+        }
+    }
+
+    async function addTaskToAPI(task) {
+        try {
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: task,
+                    completed: false,
+                    userId: 1
+                })
+            });
+            if (!response.ok) throw new Error('Network response was not ok');
+            const newTask = await response.json();
+            addToList(newTask.title, newTask.completed);
+        } catch (error) {
+            alert('Error adding task: ' + error.message);
+        }
+    }
+
+    function addItem() {
+        const input = document.getElementById('todo-input');
+        if (input.value) {
+            addTaskToAPI(input.value);
+            input.value = '';
+        }
+    }
+
+    function addToList(text, completed) {
+        const list = document.getElementById('todo-list');
+        const item = document.createElement('div');
+        item.className = `todo-item ${completed ? 'completed' : ''}`;
+        
+        item.innerHTML = `
+            <span>${text}</span>
+            <div>
+                <button onclick="toggleComplete(this)">✔️</button>
+                <button onclick="removeItem(this)">🗑️</button>
+            </div>
+        `;
+        list.appendChild(item);
+    }
+
+    function toggleComplete(button) {
+        const item = button.parentElement.parentElement;
+        item.classList.toggle('completed');
+    }
+
+    function removeItem(button) {
+        const item = button.parentElement.parentElement;
+        item.remove();
+    }
+</script>
+
+</body>
+</html>
